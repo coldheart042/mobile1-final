@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Working man's Pizza</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script src="js/application.js"></script>
+
+</head>
+<body>
+
+<!-- This is the Home Page -->
+    <div data-role="page" data-theme="e" id="home" class="ui-page">
+        <div data-role="header" class="center">Home</div>
+        <div data-role="content" class="ui-content">
+            <img src="images/pizza_head.jpg" alt="header" class="centerContent">
+            <hr>
+            <h3>Paragraph 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet urna metus. Donec elit nibh, euismod sit amet velit a, eleifend venenatis urna. Morbi dui libero, consequat vel dui ut, cursus euismod justo. Pellentesque suscipit lacus lectus, eget fermentum velit vehicula nec. In eget cursus dolor. In lobortis vitae risus ac facilisis. Vivamus tempor vulputate lobortis. Integer laoreet ipsum nec ante condimentum fringilla. Quisque sit amet nisl justo.</p>
+            <h3>Paragraph 2</h3>
+            <p>In eget tincidunt nulla. Mauris non tortor in lectus egestas faucibus. Nullam ut ornare ante, eu lobortis velit. Integer quis quam luctus, auctor leo quis, semper odio. Proin dui tellus, ornare eu euismod a, faucibus ullamcorper tellus. Phasellus vel lacus sollicitudin, tempus arcu sed, fringilla mi. Curabitur sagittis malesuada pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam convallis elit sit amet orci convallis aliquet. Vestibulum eu mauris consectetur, ultricies orci sed, lobortis metus.</p>
+            <h3>Paragraph 3</h3>
+            <p>Nullam suscipit augue malesuada, rutrum quam et, egestas ipsum. Nullam vitae tortor lobortis, venenatis enim vel, ultricies est. Nam nec libero eu felis molestie sodales at ut dolor. Duis elit nulla, gravida nec arcu sit amet, eleifend cursus arcu. Nunc a odio luctus, adipiscing enim nec, congue eros. Vivamus fringilla posuere nisi, ac pharetra enim tristique non. Fusce non fringilla leo. Cras placerat condimentum lectus. In at enim ut ipsum porta fringilla. Etiam non pellentesque velit.</p>
+        </div>
+        <div data-role="footer" class="bottom center"><a data-role="button" href="#mainMenu" data-rel="dialog" data-theme="c">Main menu</a></div>
+    </div>
+
+<!-- This is the Call Page -->
+    <div data-role="page" data-theme="e" id="call" class="ui-page">
+        <div data-role="header" class="center">Call Us</div>
+        <div data-role="content">
+            <p class="center">Call us anytime between the hours of 11:00 A.M. and 11:00 P.M. to place an order!</p>
+            <a data-role="button" data-icon="grid" href="tel:+5095551234" >Call Now!</a></div>
+        <div data-role="footer" class="bottom center"><a data-role="button" href="#mainMenu" data-rel="dialog" data-theme="c">Main menu</a></div>
+    </div>
+
+<!-- This is the Menu Page -->
+    <div data-role="page" data-theme="e" id="menu" class="ui-page">
+        <div data-role="header" class="center">Menu</div>
+        <div data-role="content">
+            <button type="button" data-role="button" id="start" data-icon="plus">Start a new pizza!</button>
+
+            <div data-role="collapsible" class="center">
+                <h3>Crusts</h3>
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <input type="radio" name="crust" id="classicCrust" value="Classic" class="menuControls1 crust" data-mini="true">
+                    <label for="classicCrust">Classic</label>
+
+                    <input type="radio" name="crust" id="deepCrust" value="DeepDish" class="menuControls1 crust" data-mini="true">
+                    <label for="deepCrust">Deep Dish</label>
+
+                    <input type="radio" name="crust" id="nyCrust" value="NYork" class="menuControls1 crust" data-mini="true">
+                    <label for="nyCrust">New York</label>
+
+                    <input type="radio" name="crust" id="stuffedCrust" value="Stuffed" class="menuControls1 crust" data-mini="true">
+                    <label for="stuffedCrust">Stuffed</label>
+                </fieldset>
+
+            </div>
+
+            <div data-role="collapsible" class="center">
+                <h3>Sauces</h3>
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <input type="radio" name="sauce" id="marinara" value="marinara" class="menuControls1 sauce" data-mini="true">
+                    <label for="marinara">Marinara</label>
+
+                    <input type="radio" name="sauce" id="pesto" value="pesto" class="menuControls1 sauce" data-mini="true">
+                    <label for="pesto">Pesto</label>
+
+                    <input type="radio" name="sauce" id="bbq" value="bbq" class="menuControls1 sauce" data-mini="true">
+                    <label for="bbq">BBQ</label>
+
+                    <input type="radio" name="sauce" id="alfredo" value="alfredo" class="menuControls1 sauce" data-mini="true">
+                    <label for="alfredo">Alfredo</label>
+                </fieldset>
+
+            </div>
+
+            <div data-role="collapsible" class="center">
+                <h3>Toppings</h3>
+                Choose your toppings!
+                <label><input type="checkbox" name="ExtraCheese" class="menuControls1 topping" data-mini="true" /> Extra Cheese </label>
+                <div data-role="collapsible">
+                    <h3>Meat</h3>
+                    <fieldset>
+                        <label><input type="checkbox" name="Pepperoni" class="menuControls1 topping" data-mini="true" /> Pepperoni </label>
+                        <label><input type="checkbox" name="Sausage" class="menuControls1 topping" data-mini="true" /> Sausage </label>
+                        <label><input type="checkbox" name="Chicken" class="menuControls1 topping" data-mini="true" /> Chicken </label>
+                        <label><input type="checkbox" name="Canadian" class="menuControls1 topping" data-mini="true" /> Canadian Bacon </label>
+                        <label><input type="checkbox" name="Bacon" class="menuControls1 topping" data-mini="true" /> Regular Bacon </label>
+                        <label><input type="checkbox" name="Anchovies" class="menuControls1 topping" data-mini="true" /> Anchovies </label>
+                    </fieldset>
+                </div>
+
+                <div data-role="collapsible">
+                    <h3>Veggies</h3>
+                    <fieldset>
+                        <label><input type="checkbox" name="Peppers" class="menuControls1 topping" data-mini="true" /> Peppers </label>
+                        <label><input type="checkbox" name="Mushrooms" class="menuControls1 topping" data-mini="true" /> Mushrooms </label>
+                        <label><input type="checkbox" name="Tomato" class="menuControls1 topping" data-mini="true" /> Tomato </label>
+                        <label><input type="checkbox" name="Olives" class="menuControls1 topping" data-mini="true" /> Olives </label>
+                        <label><input type="checkbox" name="Onion" class="menuControls1 topping" data-mini="true" /> Onion </label>
+                        <label><input type="checkbox" name="Pineapple" class="menuControls1 topping" data-mini="true" /> Pineapple </label>
+                    </fieldset>
+                </div>
+
+            </div>
+
+
+            <button type="button" data-role="button" id="finish" class="menuControls" data-icon="check">Add to Cart!</button>
+        </div>
+        <div data-role="footer" class="bottom center"><a data-role="button" href="#mainMenu" data-rel="dialog" data-theme="c">Main menu</a></div>
+    </div>
+
+<!-- This is the Order Page -->
+    <div data-role="page" data-theme="e" id="order" class="ui-page">
+        <div data-role="header" class="center">Order Details and Options</div>
+        <div data-role="content">
+            <button data-role="button" id="loadFavorite">Load Favorite Order</button>
+            <div data-role="collapsible" >
+                <h3>Shopping Cart</h3>
+                <div>
+                    <div id="currentOrderForm">
+
+                    </div>
+                    <button data-role="button" id="saveAsFavorite">Save as Favorite</button>
+                </div>
+            </div>
+            <input type="text" placeholder="Phone Number" class="phone">
+            <a href="#delAddress" data-role="button" data-inline="true" id="useCash" data-rel="dialog">Pay by cash/check</a>
+            <a href="#card" data-role="button" data-inline="true" id="useCard" data-rel="dialog">Pay by Debit/Credit</a>
+            <button data-role="button" id='submit'>Submit</button>
+        </div>
+        <div data-role="footer" class="bottom center"><a data-role="button" href="#mainMenu" data-rel="dialog" data-theme="c">Main menu</a></div>
+    </div>
+
+<!-- This is the Card Page (PopUp)-->
+    <div data-role="page" data-theme="e" id="card" class="ui-page">
+        <div data-role="header" class="center">Pay by Credit/Debit</div>
+        <div data-role="content">
+            <input type="text" placeholder="Name as on Card" id="cardName" class="cardInfo">
+            <input type="text" placeholder="Card Number" id="cardNumber" class="cardInfo">
+            <input type="text" placeholder="CRV Code" id="cardCrv" class="cardInfo">
+            Please enter your card's billing address:
+            <input type="text" placeholder="Address 1" id = "card1" class="cardInfo address">
+            <input type="text" placeholder="Address 2" id = "card2" class="cardInfo address">
+            <input type="text" placeholder="City" id = "cardc" class="cardInfo address">
+            <input type="text" placeholder="State" id = "cards" class="cardInfo address">
+            <input type="text" placeholder="Zip" id = "cardz" class="cardInfo address">
+            <a href="#order" data-role="button" id = "deliverHere" data-inline="true">Deliver Here!</a>
+            <a href="#delAddress" data-role="button" id = "deliverThere" data-inline="true" data-rel="dialog">Deliver to different address!</a>
+        </div>
+        <div data-role="footer"></div>
+    </div>
+
+<!-- This is the Delivery Address Page (PopUp)-->
+    <div data-role="page" data-theme="e" id="delAddress" class="ui-page">
+        <div data-role="header" class="bottom center">Delivery Address</div>
+        <div data-role="content">
+            <input type="text" placeholder="Address 1" id = "del1" class="address">
+            <input type="text" placeholder="Address 2" id = "del2" class="address">
+            <input type="text" placeholder="City" id = "delc" class="address">
+            <input type="text" placeholder="State" id = "dels" class="address">
+            <input type="text" placeholder="Zip" id = "delz" class="address">
+        </div>
+        <div data-role="footer"><a href="#order" id= "deliveryAddress" data-role="button" data-rel="dialog" data-theme="c" data-icon="check">Submit</a></div>
+    </div>
+
+<!-- This is the Location Page -->
+    <div data-role="page" data-theme="e" id="location" class="ui-page">
+        <div data-role="header" class="center"></div>
+            <div id='map-canvas'></div>
+        <div data-role="content"></div>
+        <div data-role="footer" class="bottom center"><a data-role="button" href="#mainMenu" data-rel="dialog" data-theme="c">Main menu</a></div>
+    </div>
+
+<!-- This is the About Page -->
+    <div data-role="page" data-theme="e" id="about" class="ui-page">
+        <div data-role="header" class="center"></div>
+        <div data-role="content">
+            <h3>Paragraph 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet urna metus. Donec elit nibh, euismod sit amet velit a, eleifend venenatis urna. Morbi dui libero, consequat vel dui ut, cursus euismod justo. Pellentesque suscipit lacus lectus, eget fermentum velit vehicula nec. In eget cursus dolor. In lobortis vitae risus ac facilisis. Vivamus tempor vulputate lobortis. Integer laoreet ipsum nec ante condimentum fringilla. Quisque sit amet nisl justo.</p>
+            <h3>Paragraph 2</h3>
+            <p>In eget tincidunt nulla. Mauris non tortor in lectus egestas faucibus. Nullam ut ornare ante, eu lobortis velit. Integer quis quam luctus, auctor leo quis, semper odio. Proin dui tellus, ornare eu euismod a, faucibus ullamcorper tellus. Phasellus vel lacus sollicitudin, tempus arcu sed, fringilla mi. Curabitur sagittis malesuada pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam convallis elit sit amet orci convallis aliquet. Vestibulum eu mauris consectetur, ultricies orci sed, lobortis metus.</p>
+            <h3>Paragraph 3</h3>
+            <p>Nullam suscipit augue malesuada, rutrum quam et, egestas ipsum. Nullam vitae tortor lobortis, venenatis enim vel, ultricies est. Nam nec libero eu felis molestie sodales at ut dolor. Duis elit nulla, gravida nec arcu sit amet, eleifend cursus arcu. Nunc a odio luctus, adipiscing enim nec, congue eros. Vivamus fringilla posuere nisi, ac pharetra enim tristique non. Fusce non fringilla leo. Cras placerat condimentum lectus. In at enim ut ipsum porta fringilla. Etiam non pellentesque velit.</p>
+        </div>
+        <div data-role="footer" class="bottom center"><a data-role="button" href="#mainMenu" data-rel="dialog" data-theme="c">Main menu</a></div>
+    </div>
+
+<!-- This is the main menu (PopUp)-->
+<div data-role="page" data-theme="e" id="mainMenu" class="ui-page">
+    <div data-role="header" class="center">Main Menu</div>
+    <div data-role="content">
+        <a data-role="button" href="#home">Home</a>
+        <a data-role="button" href="#call">Call us</a>
+        <a data-role="button" href="#menu">Menu</a>
+        <a data-role="button" href="#order">Order</a>
+        <a data-role="button" href="#location">Location</a>
+        <a data-role="button" href="#about">About us</a>
+    </div>
+    <div data-role="footer" class="center">Please select an option</div>
+</div>
+
+</body>
+</html>
