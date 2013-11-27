@@ -29,11 +29,27 @@
 
         // Show a custom alertDismissed
         //
-        function showAlert() {
+        function orderSent() {
             navigator.notification.alert(
-                    'You are the winner!',  // message
+                    'Your order has been sent!',  // message
                     alertDismissed,         // callback
-                    'Game Over',            // title
+                    'Thank you!',            // title
+                    'Done'                  // buttonName
+            );
+        }
+        function goToOrder() {
+            navigator.notification.alert(
+                    'Go to the order page to review and submit your pizza order!',  // message
+                    alertDismissed,         // callback
+                    'Pizza added to order!',            // title
+                    'Done'                  // buttonName
+            );
+        }
+        function appLoaded() {
+            navigator.notification.alert(
+                    'App has been loaded!',  // message
+                    alertDismissed,         // callback
+                    'Notification:',            // title
                     'Done'                  // buttonName
             );
         }
@@ -143,7 +159,7 @@
             </div>
 
 
-            <button type="button" data-role="button" id="finish" class="menuControls" data-icon="check">Add to Cart!</button>
+            <button type="button" data-role="button" id="finish" class="menuControls" data-icon="check" onclick="goToOrder()">Add to Cart!</button>
         </div>
         <div data-role="footer" class="bottom center"><a data-role="button" href="#mainMenu" data-rel="dialog" data-theme="c">Main menu</a></div>
     </div>
@@ -165,7 +181,7 @@
             <input type="text" placeholder="Phone Number" class="phone">
             <a href="#delAddress" data-role="button" data-inline="true" id="useCash" data-rel="dialog">Pay by cash/check</a>
             <a href="#card" data-role="button" data-inline="true" id="useCard" data-rel="dialog">Pay by Debit/Credit</a>
-            <button data-role="button" id='submit' onclick="showAlert()">Submit</button>
+            <button data-role="button" id='submit' onclick="orderSent()">Submit</button>
         </div>
         <div data-role="footer" class="bottom center"><a data-role="button" href="#mainMenu" data-rel="dialog" data-theme="c">Main menu</a></div>
     </div>
