@@ -14,12 +14,12 @@
 
         // Wait for device API libraries to load
         //
-        document.addEventListener("deviceready", onDeviceReady, false);
+        document.getElementById("submit").addEventListener("click", onDeviceReady, false);
 
         // device APIs are available
         //
         function onDeviceReady() {
-            $("#submit").click(showAlert());
+            showAlert();
         }
 
         // alert dialog dismissed
