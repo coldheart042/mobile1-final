@@ -19,9 +19,7 @@
         // device APIs are available
         //
         function onDeviceReady() {
-            document.getElementById('submit').onclick(function(){
-                showAlert();
-            })
+            // Empty
         }
 
         // alert dialog dismissed
@@ -33,9 +31,9 @@
         //
         function showAlert() {
             navigator.notification.alert(
-                    'Your order has been sent!',  // message
+                    'You are the winner!',  // message
                     alertDismissed,         // callback
-                    'Thank you!',            // title
+                    'Game Over',            // title
                     'Done'                  // buttonName
             );
         }
@@ -167,7 +165,7 @@
             <input type="text" placeholder="Phone Number" class="phone">
             <a href="#delAddress" data-role="button" data-inline="true" id="useCash" data-rel="dialog">Pay by cash/check</a>
             <a href="#card" data-role="button" data-inline="true" id="useCard" data-rel="dialog">Pay by Debit/Credit</a>
-            <button data-role="button" id='submit'>Submit</button>
+            <button data-role="button" id='submit' onclick="showAlert()">Submit</button>
         </div>
         <div data-role="footer" class="bottom center"><a data-role="button" href="#mainMenu" data-rel="dialog" data-theme="c">Main menu</a></div>
     </div>
