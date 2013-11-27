@@ -9,6 +9,37 @@
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+        // Wait for device API libraries to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // device APIs are available
+        //
+        function onDeviceReady() {
+            $("#submit").click(showAlert());
+        }
+
+        // alert dialog dismissed
+        function alertDismissed() {
+            // do something
+        }
+
+        // Show a custom alertDismissed
+        //
+        function showAlert() {
+            navigator.notification.alert(
+                    'Your order has been sent!',  // message
+                    alertDismissed,         // callback
+                    'Thank you!',            // title
+                    'Done'                  // buttonName
+            );
+        }
+
+    </script>
+
     <script src="js/application.js"></script>
 
 </head>
